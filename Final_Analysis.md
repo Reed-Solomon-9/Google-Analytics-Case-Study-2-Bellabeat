@@ -35,7 +35,7 @@ and I have both calories and METs for all 35 users- but I only have weight measu
 I compared the weights for the 13 users who recorded their weight with the weight measurement I derived from the calories-to-METs formula. 
 
 </br>
-<img width="419" height="536" alt="vertical dual-axis bar chart showing the weights calculated from the calories to METs ratio overlaid on the actual measured weight for each of 13 users" src="https://github.com/user-attachments/assets/785f1813-a0f8-4724-b911-f631898d4f55" /></br>
+<img width="1034" height="421" alt="horizontal dual-axis bar chart showing the weights calculated from the calories to METs ratio overlaid on the actual measured weight for each of 13 users" src="https://github.com/user-attachments/assets/2190376a-9bb4-43ce-bbf9-23b6805f4b4c" /></br>
 </br>
 
 The result showed that of the 13 people who measured their weight, <b>all 13</b> had a lower weight as part of their individual calories-to-METs formula. The difference was also more pronounced for users with higher measured weight (R-Squared of .571):
