@@ -11,7 +11,7 @@ The dataset has 29 tables, organized by time units: day, hour, minute, second. M
 There are 35 unique entries for “user_id” in total among these tables. In the tables for exercise intensity, calories, METs, and steps, all 35 user IDs are present. Only subsets of users measured weight, sleep, and heart rate. 4 of the 35 users measured every metric that was in the dataset.
 
 </br>
-<img width="585" height="371" alt="horizontal bar chart comparing the number of participants for each measurement" src="https://github.com/user-attachments/assets/f3efc46b-7eb7-4dae-8d49-98f4d1c1c2d9" /></br>
+<img width="585" height="371" alt="horizontal bar chart comparing the number of participants for each measurement" src="https://github.com/user-attachments/assets/ef8a5ef2-b55f-4d73-af8f-96002c16e8d2" /></br>
 </br>
 
 I converted the time intervals to hours and stitched all the tables together to compare the measurements side-by-side. I aggregated the tables that were organized by seconds and minutes, and used UNION and JOIN statements. There was some overlap between the March-April and April-May time series, but the overlap was with identical rows and the duplicates were easily removed.
