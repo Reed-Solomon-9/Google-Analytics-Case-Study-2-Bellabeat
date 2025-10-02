@@ -23,7 +23,7 @@ I loaded a complete table into Tableau featuring the 35 user ID’s and the tota
 The first thing I noticed about the data was that there were four metrics that had all 35 users present: steps, MET’s, calories, and exercise intensity. My suspicion was that these were all derived from the same measurements, perhaps a step counter. In particular, there isn’t really a way to directly measure “calories”, whether that means calories consumed or burned. I charted calories and MET’s together and the resulting relationship was close to linear, and it was basically perfectly linear when broken down by user.
 
 </br>
-<img width="521" height="560" alt="three line charts: 2 showing calories and METs plotted by hour of the day, and then a line for the ratio between them, which is perfectly straight" src="https://github.com/user-attachments/assets/c20ecb8a-a5f2-4167-9400-11a776395cdd" /></br>
+<img width="721" height="760" alt="three line charts: 2 showing calories and METs plotted by hour of the day, and then a line for the ratio between them, which is perfectly straight" src="https://github.com/user-attachments/assets/0ead7c8c-3381-4b48-bd5d-3108f07d99c2" /></br>
 </br>
 
 This was interesting because the formula for the calorie-to-MET relationship is 
@@ -43,7 +43,7 @@ The result showed that of the 13 people who measured their weight, <b>all 13</b>
 _All scatter plots shown in this analysis contain relationships with P values below 0.05, unless otherwise noted_
 
 </br>
-<img width="595" height="541" alt="scatter plot with the percent ratio of presumed to average weight on the Y axis, and measured weight on the X axis. The trend line shows that the presumed weight was lower as a share of measured weight for heavier users." src="https://github.com/user-attachments/assets/947f40a8-8730-4bae-9633-f9bf5d60f425" /></br>
+<img width="595" height="541" alt="scatter plot with the percent ratio of presumed to average weight on the Y axis, and measured weight on the X axis. The trend line shows that the presumed weight was lower as a share of measured weight for heavier users." src="https://github.com/user-attachments/assets/4a76ceaf-ed21-462b-928d-8a0ef429071a" /></br>
 </br>
 
 My best guess here is that the fitness trackers propmped the users to input their weights, and they systematically underestimated them. 
@@ -55,15 +55,15 @@ As the metrics for steps, METs, calories, and daily activity are derived from th
 These relationships have some limitations: First, the daily activity/step counter was the only fitness tracker device that had anything close to consistent usage. As mentioned before, the sleep and heart rate trackers were only used by a portion of the cohort, and usage was significantly less consistent among those users as well. Here are the Gantt charts showing when users tracked sleep and heart rate turing the two-month timespan:
 
 </br>
-<img width="1030" height="591" alt="horizontal Gantt chart showing which days each user measured their sleep" src="https://github.com/user-attachments/assets/be8f9931-adad-40c9-a953-9db1ff65a18b" />
+<img width="1029" height="592" alt="horizontal Gantt chart showing which days each user measured their sleep" src="https://github.com/user-attachments/assets/0b9805ce-7f4b-4706-86c6-3b1087199213" />
 
-<img width="1030" height="393" alt="horizontal Gantt chart showing which days each user measured their heart rate" src="https://github.com/user-attachments/assets/9d4282e3-4ac0-40bc-bd85-f6e1807d0eb2" /></br>
+<img width="1030" height="393" alt="horizontal Gantt chart showing which days each user measured their heart rate" src="https://github.com/user-attachments/assets/bd3d7e6a-e124-4f87-8833-381566bfe89b" /></br>
 </br>
 
 I began plotting the relationships between various metrics for user sleep, heart rate, and activity. This dataset has significant sample size issues: while all 35 unique users in the dataset tracked daily activity, there are only 25 users who measured any sleep, 15 users who measured heart rate at all, 12 users who measured both sleep and heart rate, and just 4 users who measured all three of sleep, heart rate, and weight. Below is the breakdown:
 
 </br>
-<img width="595" height="432" alt="diagram showing how many users measured each combination of their sleep, heart rate, and weight at any point in the dataset" src="https://github.com/user-attachments/assets/e329d6a7-4c24-44f6-a775-30abf525968b" /></br>
+<img width="595" height="432" alt="diagram showing how many users measured each combination of their sleep, heart rate, and weight at any point in the dataset" src="https://github.com/user-attachments/assets/a338540d-76f6-4d86-8c60-0540fdd81838" /></br>
 </br>
 
 Users tracked activity (steps) very consistently (1935/1956 or 99%), but sleep, heart rate, and weight tracking were intermittent. For heart rate, in addition to just 15/35 or 43% of users tracking it at all, for users who did track it, they only did so on 467/836 or 56% of days during the interval they tracked activity.
@@ -71,7 +71,7 @@ There was a similar pattern for sleep: 25/35 or 71% of users tracked sleep at al
 For weight, 13/35 or 37% of users tracked it at all, and measurements were made on 100/717 or 14% of days.
 
 </br>
-<img width="419" height="494" alt="vertical bar chart comparing percentages of days where activity, sleep, heart rate, and weight were recorded" src="https://github.com/user-attachments/assets/02474602-4326-4800-8518-c01d3a578202" /></br>
+<img width="419" height="494" alt="vertical bar chart comparing percentages of days where activity, sleep, heart rate, and weight were recorded" src="https://github.com/user-attachments/assets/aa2937c7-cd06-420c-88ce-e9530797635f" /></br>
 </br>
 
 Due to these limitations, the insights from this analysis about sleep, heart rate, and weight behavior may be useful, but definitive statements would require more data.
@@ -79,7 +79,7 @@ Due to these limitations, the insights from this analysis about sleep, heart rat
 I re-aggregated my table with SQL to organize the metrics by day instead of hour. After plotting many variablies against one another, I was able to yield some potentially useful insights:
 
 </br>
-<img width="543" height="541" alt="scatter plot with daily sleep hours on the Y axis and average maximum hourly heartrate on the X axis. There is a trend line showing a negative correlation." src="https://github.com/user-attachments/assets/4cfe1fb0-f667-4258-a4bd-e3298ffbd1e4" /></br>
+<img width="543" height="541" alt="scatter plot with daily sleep hours on the Y axis and average maximum hourly heartrate on the X axis. There is a trend line showing a negative correlation." src="https://github.com/user-attachments/assets/4d6bf756-e283-4a18-bf26-035a8750ee0a" /></br>
 </br>
 
 The most striking association is between heart rate and sleep. Resting heart rate varies substantially among individuals, so I plotted the maximum hourly heartrate for each user to capture how often their heart rates were elevated. I found a negative correlation between max hourly heart rate and sleep, with a correlation coefficient of -.225, equivalent to a decrease of 2.25 hours of sleep for an increase of 10 beats per minute of average max hourly heartrate. The sample size of 12 is of course tiny, but the R-squared value of .426 made this relationship hard to overlook. The relationship between daily steps and sleep hours was also negative, but fell short of statistical significance.
@@ -87,19 +87,19 @@ The most striking association is between heart rate and sleep. Resting heart rat
 There was also an interesting relationship between the <b>minimum</b> hourly heart rate (which I believe is a good proxy for resting heart rate) and daily activity. This fell just short of statistical significance with a p value of 0.07, but there is a clear negative relationship in this sample of n=15:
 
 </br>
-<img width="595" height="541" alt="scatter plot with daily METs on the Y axis and minimum hourly heart rate on the X axis. There is a trend line showing a negative correlation." src="https://github.com/user-attachments/assets/b621132b-60c5-42c8-90e1-750966bfa64f" /></br>
+<img width="595" height="541" alt="scatter plot with daily METs on the Y axis and minimum hourly heart rate on the X axis. There is a trend line showing a negative correlation." src="https://github.com/user-attachments/assets/b141e341-7d11-490e-805c-d84dadf40ff6" /></br>
 </br>
 
 The one other interesting insight revealed from this dataset came when I plotted each of the four activity levels (sedentary, light, moderate, intense) against measured weight. The percentage of total minutes spent sedentary was correlated positively with weight, as expected: (R-squared = .34):
 
 </br>
-<img width="531" height="545" alt="scatter plot with weight on the Y axis and percentage of total activity minutes spent sedentary on the X axis. There is a trend line showing a positive correlation." src="https://github.com/user-attachments/assets/354ecb5f-c6c9-4d4c-b941-076412fadd9e" /></br>
+<img width="531" height="545" alt="scatter plot with weight on the Y axis and percentage of total activity minutes spent sedentary on the X axis. There is a trend line showing a positive correlation." src="https://github.com/user-attachments/assets/c4e369f1-f0bf-41b5-ae92-6ff8cfe41b78" /></br>
 </br>
 
 However, there was no significant relationship between user weight and their percentage of time spend doing intense of moderate activity. The only significant difference was a decrease in <b>light activity</b>, which had a significant negative relationship with weight (R-squared of .355):
 
 </br>
-<img width="576" height="545" alt="scatter plot with weight on the Y axis and percentage of total activity minutes spent performing light activity on the X axis. There is a trend line showing a negative correlation." src="https://github.com/user-attachments/assets/70cde771-9117-40cc-b626-2cb8b7a326f9" /></br>
+<img width="576" height="545" alt="scatter plot with weight on the Y axis and percentage of total activity minutes spent performing light activity on the X axis. There is a trend line showing a negative correlation." src="https://github.com/user-attachments/assets/3df37a4f-912e-45db-9344-9d30e53d43fe" /></br>
 </br>
 
 The increase in sedentary 'activity' with higher weight seems to come at the expense of light exercise; a finding that could have interesting implications if replicated with a larger sample size.
